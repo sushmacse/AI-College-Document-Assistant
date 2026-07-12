@@ -1,0 +1,11 @@
+Library Rules
+
+Library timings are 9:00 AM to 6:00 PM.
+
+Students may borrow three books for 15 days.
+
+Late returns will incur a fine.
+
+Silence must be maintained.
+
+College ID is required to borrow books.
