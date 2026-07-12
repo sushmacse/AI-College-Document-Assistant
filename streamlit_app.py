@@ -59,7 +59,7 @@ embeddings = HuggingFaceEmbeddings(
 
 # Load database
 db = Chroma(
-    persist_directory="college_db",
+    persist_directory="chroma_db",
     embedding_function=embeddings
 )
 
