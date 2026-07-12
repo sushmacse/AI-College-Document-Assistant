@@ -73,30 +73,27 @@ retriever = db.as_retriever(
 question = st.text_input("Enter your question:")
 
 
-if question:
+question = st.chat_input("Ask a question about your college documents...")
 
+if question:
     docs = retriever.invoke(question)
 
-    context = "\n\n".join(
-        doc.page_content for doc in docs
-    )
-
+    context = "\n\n".join(doc.page_content for doc in docs)
 
     prompt = f"""
-    Answer only using the context below.
+Answer only using the context below.
 
-    Context:
-    {context}
+Context:
+{context}
 
-    Question:
-    {question}
-    """
-
+Question:
+{question}
+"""
 
     response = client.models.generate_content(
         model="models/gemini-flash-latest",
         contents=prompt
     )
 
-    st.subheader("Answer:")
+    st.subheader("Answer")
     st.write(response.text)
